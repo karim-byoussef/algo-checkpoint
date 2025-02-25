@@ -1,0 +1,25 @@
+ALGORITHM checkpoint;
+
+VAR
+    sentence: STRING;
+    i, word, vowel, letter: INTEGER:= 0;
+
+BEGIN
+    Read(sentence);
+    WHILE (sentence[i] <> ".") DO 
+        IF (sentence[i] = " ") THEN 
+            word:= word + 1;
+        ELSE
+            IF ((sentence[i].ToUpper = "A") OR (sentence[i].ToUpper = "E") OR (sentence[i].ToUpper = "O") OR (sentence[i].ToUpper = "U") OR (sentence[i].ToUpper = "I") OR (sentence[i].ToUpper = "Y")) THEN
+                vowel:= vowel + 1; 
+                letter := letter + 1;
+            ELSE
+                letter:= letter + 1; 
+            END_IF
+        END_IF 
+        i:= i + 1;
+    END_WHILE
+    Write(word - 1); 
+    Write(vowel);
+    Write(letter);
+END
